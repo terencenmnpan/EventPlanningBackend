@@ -1,11 +1,20 @@
 package com.terencepan.demo.backend.epa.entities
 
+import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.annotation.Id
+import org.springframework.data.annotation.LastModifiedDate
+import org.springframework.data.mongodb.core.mapping.Document
+import java.time.LocalDateTime
 
-class EpaOrganization {
-    @Id
-    lateinit var organizationId: String
-    lateinit var organizationName: String
-    lateinit var organizationUsers: List<EpaUser>
-    lateinit var mailingAddress: EpaAddress
-}
+@Document
+data class EpaOrganization(
+        @Id
+        var organizationId: String? = null,
+        var organizationName: String? = null,
+        var organizationUsers: List<EpaUser>? = null,
+        var mailingAddress: EpaAddress? = null,
+        @CreatedDate
+        val createdDate: LocalDateTime? = LocalDateTime.now(),
+        @LastModifiedDate
+        val modifiedDate: LocalDateTime? = LocalDateTime.now()
+)
