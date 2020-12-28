@@ -11,15 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController("/organization")
-public class EventManagementController {
+public class EventsController {
 
-    @Autowired
-    EventMaintenanceService eventMaintenanceService;
-
-    @GetMapping("/getUsers")
-    public List<EpaUser> getOrganizationUsers(@RequestParam(value = "organizationId") String organizationId){
-        return eventMaintenanceService.getUsersByOrganization(organizationId);
-    }
 
     @GetMapping("/getEventsByUserId")
     public List<EpaEvent> getEvents(@RequestParam(value = "userId") String userId){

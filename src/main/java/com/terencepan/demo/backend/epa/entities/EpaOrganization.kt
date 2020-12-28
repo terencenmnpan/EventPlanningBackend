@@ -10,6 +10,7 @@ import java.time.LocalDateTime
 data class EpaOrganization(
         @Id
         var organizationId: String? = null,
+        //@NotNull(message="Organization Name cannot be blank")
         var organizationName: String? = null,
         var organizationUsers: List<EpaUser>? = null,
         var mailingAddress: EpaAddress? = null,

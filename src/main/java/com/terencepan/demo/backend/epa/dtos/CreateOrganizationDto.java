@@ -1,6 +1,6 @@
 package com.terencepan.demo.backend.epa.dtos;
 
-public class AdminDto {
+public class CreateOrganizationDto {
 
     private String userName;
     private String firstName;
