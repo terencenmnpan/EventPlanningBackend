@@ -13,6 +13,12 @@ import java.util.List;
 @RestController("/organization")
 public class EventsController {
 
+    private final
+    EventMaintenanceService eventMaintenanceService;
+
+    public EventsController(EventMaintenanceService eventMaintenanceService) {
+        this.eventMaintenanceService = eventMaintenanceService;
+    }
 
     @GetMapping("/getEventsByUserId")
     public List<EpaEvent> getEvents(@RequestParam(value = "userId") String userId){
