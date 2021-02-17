@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface EpaUserRepository extends MongoRepository <EpaUser, String> {
-
+    EpaUser findByUserId();
 }
